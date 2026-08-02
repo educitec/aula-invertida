@@ -1291,12 +1291,52 @@ function preencherOpcoesBimestre(
 }
 
 
+function atualizarRotuloFiltroAula(
+  materialSelecionado = ""
+) {
+  const rotulo =
+    document.getElementById(
+      "rotulo-filtro-aula"
+    );
+
+  if (!rotulo) {
+    return;
+  }
+
+  let chave =
+    "filters.lesson";
+
+  if (
+    materialSelecionado ===
+    "Correção da Tarefa"
+  ) {
+    chave =
+      "filters.assignment";
+  } else if (
+    materialSelecionado ===
+    "Correção da Prova Paulista"
+  ) {
+    chave =
+      "filters.exam";
+  }
+
+  rotulo.dataset.i18n =
+    chave;
+
+  rotulo.textContent =
+    t(chave);
+}
+
+
 function preencherOpcoesAula(
   material = "",
   disciplina = "",
   serie = "",
   bimestre = ""
 ) {
+  atualizarRotuloFiltroAula(
+    material
+  );
   const select =
     document.getElementById(
       "filtro-aula"
@@ -2236,6 +2276,13 @@ document.addEventListener(
          * no idioma selecionado.
          */
         restaurarFiltrosSalvos();
+
+        atualizarRotuloFiltroAula(
+          document.getElementById(
+            "filtro-material"
+          )?.value || ""
+        );
+
         aplicarFiltros();
 
         painelFiltros
