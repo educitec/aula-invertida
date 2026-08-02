@@ -17283,7 +17283,7 @@ const cursos = [
     "quantidadeAulas": 1,
     "status": "DISPONÍVEL",
     "linkAula": "https://youtu.be/LB89XVyisDI?list=PLc8Rdyjdtq34",
-    "linkMusica": "https://youtu.be/LB89XVyisDI?list=PLc8Rdyjdtq34",
+    "linkMusica": "",
     "linkPdf": "https://drive.google.com/file/d/1gTJTVwMjgy8ijJISCOKrmGC22Cm8e1cC/view?usp=sharing",
     "duracaoMinutos": 20,
     "i18n": {
